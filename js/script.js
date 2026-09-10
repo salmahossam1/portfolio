@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. تايب رايتر للسطر المكتوب في الهيرو
+  // 1. Typewriter effect
   const typedElement = document.getElementById("typedText");
   const phrases = [
     "Machine Learning Engineer",
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   typeEffect();
 
-  // 2. الهيدر وزر الانتقال للأعلى أثناء السكرول
+  // 2. Header and Scroll to top button
   const header = document.getElementById("header");
   const toTopBtn = document.getElementById("toTop");
 
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  // 3. فتح وإغلاق قائمة الموبايل
+  // 3. Mobile menu toggle
   const navToggle = document.getElementById("navToggle");
   const navPanel = document.getElementById("navPanel");
 
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     navToggle.classList.toggle("is-open");
   });
 
-  // 4. أنيميشن ظهور العناصر عند السكرول (Scroll Reveal)
+  // 4. Scroll Reveal animations
   const reveals = document.querySelectorAll(".reveal");
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -78,14 +78,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   reveals.forEach((el) => observer.observe(el));
 
-  // 5. نموذج التواصل
+  // 5. Contact Form submission
   const contactForm = document.getElementById("contactForm");
   const formStatus = document.getElementById("formStatus");
 
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
     formStatus.style.color = "var(--ok)";
-    formStatus.textContent = "تم إرسال رسالتك بنجاح! سأتواصل معك قريباً.";
+    formStatus.textContent = "Your message has been sent successfully!";
     contactForm.reset();
   });
 });
