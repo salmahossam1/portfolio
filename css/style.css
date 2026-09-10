@@ -1,5 +1,5 @@
 :root {
-  /* درجات السماء الليلية للثيم الداكن أساساً */
+  /* درجات السماء الليلية للثيم الداكن */
   --navy-950: #04070d;          /* أزرق ليلي شديد السواد */
   --navy-900: #080e1a;          /* عمق السماء الليلي */
   --navy-800: #0f1b33;          /* كحلي داكن جداً */
@@ -14,14 +14,14 @@
   --max: 1160px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 
-  /* متغیرات الثيم الداكن افتراضياً */
+  /* متغيرات الثيم الداكن افتراضياً */
   --bg: var(--navy-950);
   --bg-elev: rgba(8, 14, 26, 0.85);
   --bg-soft: rgba(15, 27, 51, 0.65);
   --text: var(--mist);
-  --muted: #94a3b8;             /* رمادي سماوي هادئ */
+  --muted: #94a3b8;
   --line: rgba(226, 232, 240, 0.12);
-  --accent: #38bdf8;            /* أزرق سماوي مضيء (تأثير توهج النجوم) */
+  --accent: #38bdf8;            /* أزرق سماوي مضيء */
   --accent-strong: #7dd3fc;     /* سماوي فاتح متوهج */
   --card: rgba(8, 14, 26, 0.75);
   --card-hover: rgba(15, 27, 51, 0.9);
@@ -117,7 +117,7 @@ ul {
   top: 12px;
 }
 
-/* خلفية النجوم والتوهج الليلية (بدون مربعات) */
+/* خلفية النجوم (بدون أي مستطيلات أو شبكة) */
 .bg-scene {
   position: fixed;
   inset: 0;
@@ -126,12 +126,11 @@ ul {
   overflow: hidden;
 }
 
-/* طبقات النجوم المضيئة المتلألئة */
+/* النجوم المتلألئة */
 .bg-grid {
   position: absolute;
   inset: 0;
   background: transparent;
-  /* توليد النجوم عبر Box Shadows متعدد النقاط */
   box-shadow: 
     12vw 15vh 2px 1px #fff, 28vw 45vh 1px 1px rgba(255, 255, 255, 0.8), 45vw 12vh 2px 0px #7dd3fc,
     65vw 35vh 1px 1px #fff, 82vw 18vh 2px 1px rgba(255, 255, 255, 0.9), 92vw 62vh 1px 0px #38bdf8,
@@ -271,6 +270,12 @@ ul {
   color: var(--white);
   font-size: 0.78rem;
   box-shadow: 0 0 16px rgba(56, 189, 248, 0.35);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.brand:hover .brand-mark {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.8);
 }
 
 .nav-list {
@@ -287,11 +292,13 @@ ul {
   font-size: 0.9rem;
   color: var(--muted);
   position: relative;
+  transition: color 0.2s, text-shadow 0.2s;
 }
 
 .nav-link:hover,
 .nav-link.is-active {
   color: var(--text);
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
 }
 
 .nav-link.is-active::after {
@@ -344,6 +351,7 @@ ul {
   transform: translateY(-6.8px) rotate(-45deg);
 }
 
+/* إضاءة وتوهج أزياء وزر الثيم عند الماوس */
 .theme-toggle {
   width: 44px;
   height: 44px;
@@ -354,14 +362,26 @@ ul {
   place-items: center;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
+  transition: transform 0.25s var(--ease), border-color 0.25s, box-shadow 0.25s, color 0.25s;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px) scale(1.05);
+  border-color: var(--accent);
+  color: var(--accent-strong);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.6);
 }
 
 .theme-toggle svg {
   width: 18px;
   height: 18px;
+  transition: filter 0.25s;
 }
 
-/* إخفاء أيقونة الشمس وإظهار القمر لثيم الليل دائمًا */
+.theme-toggle:hover svg {
+  filter: drop-shadow(0 0 6px var(--accent));
+}
+
 .icon-sun {
   display: none !important;
 }
@@ -456,7 +476,7 @@ ul {
   border: 1px solid transparent;
   cursor: pointer;
   font-weight: 600;
-  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), background 0.2s;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), background 0.2s, border-color 0.2s;
 }
 
 .btn:hover {
@@ -470,9 +490,19 @@ ul {
   border: 1px solid rgba(56, 189, 248, 0.4);
 }
 
+.btn-primary:hover {
+  box-shadow: var(--shadow-md), 0 0 28px rgba(56, 189, 248, 0.6);
+  border-color: var(--accent-strong);
+}
+
 .btn-ghost {
   background: var(--ghost-bg);
   border-color: var(--line);
+}
+
+.btn-ghost:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.3);
 }
 
 .btn-sm {
@@ -543,15 +573,14 @@ ul {
   opacity: 0;
 }
 
+/* تم إلغاء خلفية الخطوط العرضية المزعجة */
 .portrait-fallback {
   position: absolute;
   inset: 0;
   z-index: 1;
   display: grid;
   place-items: center;
-  background:
-    linear-gradient(160deg, rgba(26, 46, 82, 0.6), rgba(4, 7, 13, 0.4)),
-    repeating-linear-gradient(90deg, transparent, transparent 18px, rgba(226, 232, 240, 0.05) 19px);
+  background: linear-gradient(160deg, rgba(26, 46, 82, 0.8), rgba(4, 7, 13, 0.9));
   color: var(--text);
 }
 
@@ -708,25 +737,41 @@ ul {
   grid-column: span 2;
 }
 
+/* إضاءة وتوهج أيقونات المهارات عند الوقوف عليها */
 .skill-icon {
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   display: grid;
   place-items: center;
   border-radius: 12px;
   margin-bottom: 12px;
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(8, 14, 26, 0.5));
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(8, 14, 26, 0.5));
   border: 1px solid var(--line);
   color: var(--accent);
+  transition: transform 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s, color 0.3s, background 0.3s;
 }
 
 .skill-icon svg {
   width: 22px;
   height: 22px;
+  transition: transform 0.3s var(--ease), filter 0.3s;
+}
+
+.skill-group:hover .skill-icon,
+.skill-icon:hover {
+  transform: translateY(-3px) scale(1.08);
+  border-color: var(--accent-strong);
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.4), rgba(26, 46, 82, 0.8));
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+}
+
+.skill-group:hover .skill-icon svg {
+  filter: drop-shadow(0 0 8px #ffffff);
 }
 
 .skill-tags li {
-  transition: transform 0.2s var(--ease), box-shadow 0.2s, border-color 0.2s;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s, border-color 0.2s, background 0.2s, color 0.2s;
 }
 
 .skill-group:hover .skill-tags li {
@@ -735,7 +780,9 @@ ul {
 
 .skill-tags li:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+  background: rgba(56, 189, 248, 0.15);
+  color: #ffffff;
 }
 
 .projects-grid,
@@ -853,18 +900,13 @@ ul {
   border-radius: 14px;
   padding: 12px 14px;
   outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s;
 }
 
 .field input:focus,
-.field textarea:focus,
-.btn:focus-visible,
-.nav-link:focus-visible,
-.theme-toggle:focus-visible,
-.nav-toggle:focus-visible,
-.to-top:focus-visible,
-.social-list a:focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 2px;
+.field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.35);
 }
 
 .field.is-invalid input,
@@ -890,6 +932,7 @@ ul {
   color: var(--error);
 }
 
+/* إضاءة وتوهج أيقونات التواصل الاجتماعي عند الماوس */
 .social-list {
   display: grid;
   gap: 10px;
@@ -904,11 +947,26 @@ ul {
   border-radius: 14px;
   border: 1px solid var(--line);
   background: var(--ghost-bg);
+  transition: transform 0.25s var(--ease), border-color 0.25s, box-shadow 0.25s, color 0.25s, background 0.25s;
+}
+
+.social-list a:hover {
+  transform: translateX(-4px) translateY(-2px);
+  border-color: var(--accent);
+  color: var(--white);
+  background: rgba(56, 189, 248, 0.12);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.4);
 }
 
 .social-list svg {
   width: 18px;
   height: 18px;
+  transition: transform 0.25s, filter 0.25s;
+}
+
+.social-list a:hover svg {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 6px var(--accent));
 }
 
 .site-footer {
@@ -919,6 +977,7 @@ ul {
   border-top: 1px solid var(--line);
 }
 
+/* زر الصعود المتوهج عند الماوس */
 .to-top {
   position: fixed;
   right: 18px;
@@ -935,18 +994,29 @@ ul {
   opacity: 0;
   pointer-events: none;
   transform: translateY(8px);
-  transition: opacity 0.25s, transform 0.25s;
+  transition: opacity 0.25s, transform 0.25s, border-color 0.25s, box-shadow 0.25s, color 0.25s;
+}
+
+.to-top:hover {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+  transform: translateY(-3px);
 }
 
 .to-top svg {
   width: 20px;
   height: 20px;
+  transition: transform 0.25s;
+}
+
+.to-top:hover svg {
+  transform: translateY(-2px);
 }
 
 .to-top.is-visible {
   opacity: 1;
   pointer-events: auto;
-  transform: none;
 }
 
 .reveal {
