@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>البورتفوليو الشخصي</title>
+  <title>Personal Portfolio</title>
   
-  <!-- الخطوط -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
   
-  <!-- مكتبة أيقونات Devicon للمهارات -->
+  <!-- Devicon Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
   
-  <!-- ربط ملف الـ CSS بالمسار النسبي الصريح -->
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <a href="#main" class="skip-link">تخطي إلى المحتوى الرئيسي</a>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-  <!-- خلفية النجوم والتوهج الداكن -->
+  <!-- Stars & Background Glow -->
   <div class="bg-scene" aria-hidden="true">
     <div class="bg-grid"></div>
     <div class="bg-glow bg-glow-a"></div>
     <div class="bg-glow bg-glow-b"></div>
   </div>
 
-  <!-- الهيدر / القائمة العلوية -->
+  <!-- Header / Navigation -->
   <header class="site-header" id="header">
     <div class="navbar">
       <a href="#hero" class="brand">
@@ -36,22 +36,22 @@
 
       <div class="nav-panel" id="navPanel">
         <ul class="nav-list">
-          <li><a href="#hero" class="nav-link is-active">الرئيسية</a></li>
-          <li><a href="#about" class="nav-link">عني</a></li>
-          <li><a href="#skills" class="nav-link">المهارات</a></li>
-          <li><a href="#projects" class="nav-link">المشاريع</a></li>
-          <li><a href="#services" class="nav-link">الخدمات</a></li>
-          <li><a href="#contact" class="nav-link">تواصل معي</a></li>
+          <li><a href="#hero" class="nav-link is-active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </div>
 
-      <button class="theme-toggle" id="themeToggle" aria-label="تغيير الثيم">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
         <svg class="icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
         </svg>
       </button>
 
-      <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة">
+      <button class="nav-toggle" id="navToggle" aria-label="Open Menu">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -60,18 +60,18 @@
   </header>
 
   <main id="main">
-    <!-- قسم الهيرو الرئيسي -->
+    <!-- Hero Section -->
     <section class="section hero" id="hero">
       <div class="container hero-grid">
         <div class="hero-content reveal">
-          <p class="eyebrow">مرحباً بك في عالمي الرقمي</p>
-          <h1 class="hero-title">مطور ذكاء اصطناعي وعلوم بيانات</h1>
+          <p class="eyebrow">Welcome to my universe</p>
+          <h1 class="hero-title">AI & Data Science Developer</h1>
           <div class="typed-line"><span id="typedText"></span><span class="typed-cursor">|</span></div>
-          <p class="hero-lead">متخصص في بناء نماذج التعلم الآلي، تحليل البيانات، وتطوير لوحات التحكم التفاعلية وتحويل البيانات الضخمة إلى حلول ذكية.</p>
+          <p class="hero-lead">Specialized in building machine learning models, analyzing complex datasets, creating interactive dashboards, and transforming big data into intelligent solutions.</p>
           
           <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">تصفح المشاريع</a>
-            <a href="#contact" class="btn btn-ghost">تواصل معي</a>
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-ghost">Get in Touch</a>
           </div>
         </div>
 
@@ -89,12 +89,12 @@
       </div>
     </section>
 
-    <!-- قسم عني -->
+    <!-- About Section -->
     <section class="section" id="about">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">من أنا</p>
-          <h2>شغف بالتكنولوجيا وتحليل البيانات</h2>
+          <p class="eyebrow">About Me</p>
+          <h2>Passionate About AI & Data Driven Solutions</h2>
         </div>
 
         <div class="about-layout">
@@ -105,25 +105,25 @@
           </div>
 
           <div class="about-copy glass-card reveal">
-            <p>أدرس بكلية الحاسبات والمعلومات وتخصصت في مجال الذكاء الاصطناعي وعلوم البيانات. أعمل على تطوير نماذج التعلم الآلي والتعلم العميق باستخدام أحدث المكتبات والتقنيات.</p>
-            <p>لدي خبرة عملية في تحليل البيانات واستخراج الأنماط، وبناء تطبيقات الويب التفاعلية لعرض وتحليل البيانات بسهولة وكفاءة.</p>
+            <p>I specialize in Artificial Intelligence and Data Science. My focus is on developing machine learning algorithms and deep learning workflows using modern libraries and tools.</p>
+            <p>I also have hands-on experience in data engineering, exploratory data analysis, and constructing interactive web applications to showcase data insights seamlessly.</p>
 
             <div class="stat-grid">
               <div class="stat-card">
                 <strong>+10</strong>
-                <span>مشروع مكتمل</span>
+                <span>Projects Done</span>
               </div>
               <div class="stat-card">
-                <strong>ML / DL</strong>
-                <span>مجال التخصص</span>
+                <strong>ML / AI</strong>
+                <span>Specialization</span>
               </div>
               <div class="stat-card">
                 <strong>SQL / NoSQL</strong>
-                <span>قواعد البيانات</span>
+                <span>Databases</span>
               </div>
               <div class="stat-card">
                 <strong>100%</strong>
-                <span>الالتزام والجودة</span>
+                <span>Commitment</span>
               </div>
             </div>
           </div>
@@ -131,12 +131,12 @@
       </div>
     </section>
 
-    <!-- قسم المهارات -->
+    <!-- Skills Section -->
     <section class="section" id="skills">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">الخبرات والمهارات</p>
-          <h2>التقنيات التي أتقنها</h2>
+          <p class="eyebrow">Tech Stack</p>
+          <h2>Skills & Expertise</h2>
         </div>
 
         <div class="skills-grid">
@@ -145,7 +145,7 @@
               <i class="devicon-python-plain"></i>
             </div>
             <h3>Machine Learning & AI</h3>
-            <p class="section-intro">بناء نماذج التنبؤ والتصنيف معالجة البيانات وتدريب النماذج.</p>
+            <p class="section-intro">Building predictive models, classification, regression, and data preprocessing.</p>
             <ul class="skill-tags">
               <li>Python</li>
               <li>Scikit-Learn</li>
@@ -160,7 +160,7 @@
               <i class="devicon-postgresql-plain"></i>
             </div>
             <h3>Data Engineering & SQL</h3>
-            <p class="section-intro">إدارة وتصميم قواعد البيانات وكتابة استعلامات معقدة.</p>
+            <p class="section-intro">Designing database schemas, complex SQL queries, and ORM integrations.</p>
             <ul class="skill-tags">
               <li>PostgreSQL</li>
               <li>MS SQL Server</li>
@@ -174,7 +174,7 @@
               <i class="devicon-matcha-plain"></i>
             </div>
             <h3>Visualization & Dashboards</h3>
-            <p class="section-intro">تصميم لوحات تحكم تفاعلية وتقارير بيانية جذابة.</p>
+            <p class="section-intro">Building interactive web dashboards and executive analytical reports.</p>
             <ul class="skill-tags">
               <li>Streamlit</li>
               <li>Power BI</li>
@@ -188,7 +188,7 @@
               <i class="devicon-git-plain"></i>
             </div>
             <h3>Development & Tools</h3>
-            <p class="section-intro">أدوات التطوير والنشر وتثبيت التطبيقات.</p>
+            <p class="section-intro">Version control systems, web application interfaces, and deployment.</p>
             <ul class="skill-tags">
               <li>Git / GitHub</li>
               <li>CSS / UI Glassmorphism</li>
@@ -199,12 +199,12 @@
       </div>
     </section>
 
-    <!-- قسم المشاريع -->
+    <!-- Projects Section -->
     <section class="section" id="projects">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">أعمالي الأخيرة</p>
-          <h2>نماذج من المشاريع المميزة</h2>
+          <p class="eyebrow">Recent Work</p>
+          <h2>Featured Projects</h2>
         </div>
 
         <div class="projects-grid">
@@ -215,7 +215,7 @@
             <div class="project-body">
               <span class="card-kicker">Machine Learning</span>
               <h3>SpeedCar - AI Analytics App</h3>
-              <p>تطبيق لتوقع قوة المحرك والأداء باستخدام Random Forest وتصميم واجهة تفاعلية باستخدام Streamlit.</p>
+              <p>Engine horsepower prediction application using Random Forest regressor deployed via Streamlit.</p>
               <ul class="tag-list">
                 <li>Python</li>
                 <li>Streamlit</li>
@@ -223,7 +223,7 @@
               </ul>
             </div>
             <div class="project-actions">
-              <a href="#" class="btn btn-ghost btn-sm">عرض التفاصيل</a>
+              <a href="#" class="btn btn-ghost btn-sm">Details</a>
             </div>
           </div>
 
@@ -234,7 +234,7 @@
             <div class="project-body">
               <span class="card-kicker">Business Intelligence</span>
               <h3>Retail Performance Dashboard</h3>
-              <p>لوحة تحكم تفاعلية في Tableau لتحليل المبيعات والأرباح مع استخدام Calculated Fields ورسوم بيانية متقدمة.</p>
+              <p>Interactive Tableau dashboard featuring custom calculated fields, sales KPI tracking, and box plots.</p>
               <ul class="tag-list">
                 <li>Tableau</li>
                 <li>Data Analysis</li>
@@ -242,25 +242,25 @@
               </ul>
             </div>
             <div class="project-actions">
-              <a href="#" class="btn btn-ghost btn-sm">عرض التفاصيل</a>
+              <a href="#" class="btn btn-ghost btn-sm">Details</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- قسم الخدمات -->
+    <!-- Services Section -->
     <section class="section" id="services">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">ماذا أقدم</p>
-          <h2>خدمات متخصصة في البيانات</h2>
+          <p class="eyebrow">Services</p>
+          <h2>What I Can Do</h2>
         </div>
 
         <div class="services-grid">
           <div class="glass-card service-card reveal">
-            <h3>تطوير نماذج الذكاء الاصطناعي</h3>
-            <p>بناء وتدريب نماذج التعلم الآلي للتنبؤ والتصنيف وتحليل البيانات بدقة عالية.</p>
+            <h3>Machine Learning Development</h3>
+            <p>Training and deploying predictive models tailored to classification, regression, and clustering tasks.</p>
             <ul class="cap-list">
               <li>Regression Models</li>
               <li>Classification</li>
@@ -269,8 +269,8 @@
           </div>
 
           <div class="glass-card service-card reveal">
-            <h3>لوحات تحكم وتحليل البيانات</h3>
-            <p>تحويل البيانات الخام إلى لوحات تحكم تفاعلية وسهلة الاستخدام لمساعدة متخذي القرار.</p>
+            <h3>Dashboards & Business Analytics</h3>
+            <p>Transforming raw data into clear, interactive visual dashboards for efficient decision-making.</p>
             <ul class="cap-list">
               <li>Power BI & Tableau</li>
               <li>Streamlit Apps</li>
@@ -281,35 +281,35 @@
       </div>
     </section>
 
-    <!-- قسم التواصل -->
+    <!-- Contact Section -->
     <section class="section" id="contact">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">تواصل معي</p>
-          <h2>دعنا نعمل معاً على مشروعك القادم</h2>
+          <p class="eyebrow">Get In Touch</p>
+          <h2>Let's Work Together</h2>
         </div>
 
         <div class="contact-grid">
           <form class="contact-form reveal" id="contactForm">
             <div class="field">
-              <label for="name">الاسم بالكامل</label>
-              <input type="text" id="name" required placeholder="أدخل اسمك" />
+              <label for="name">Full Name</label>
+              <input type="text" id="name" required placeholder="Enter your name" />
             </div>
             <div class="field">
-              <label for="email">البريد الإلكتروني</label>
+              <label for="email">Email Address</label>
               <input type="email" id="email" required placeholder="example@mail.com" />
             </div>
             <div class="field">
-              <label for="message">الرسالة</label>
-              <textarea id="message" rows="5" required placeholder="اكتب تفاصيل مشروعك هنا..."></textarea>
+              <label for="message">Message</label>
+              <textarea id="message" rows="5" required placeholder="Describe your project..."></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
+            <button type="submit" class="btn btn-primary">Send Message</button>
             <div class="form-status" id="formStatus"></div>
           </form>
 
           <div class="glass-card contact-card reveal">
-            <h3>معلومات التواصل</h3>
-            <p>يمكنك التواصل معي في أي وقت عبر البريد الإلكتروني أو من خلال شبكات التواصل الاجتماعي.</p>
+            <h3>Contact Info</h3>
+            <p>Feel free to reach out via email or through social profiles.</p>
 
             <ul class="social-list">
               <li>
@@ -333,15 +333,15 @@
 
   <footer class="site-footer">
     <div class="container text-center">
-      <p>جميع الحقوق محفوظة &copy; 2026</p>
+      <p>All rights reserved &copy; 2026</p>
     </div>
   </footer>
 
-  <button class="to-top" id="toTop" aria-label="الصعود للأعلى">
+  <button class="to-top" id="toTop" aria-label="Scroll to top">
     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
   </button>
 
-  <!-- ربط ملف الـ JS بالمسار النسبي الصريح -->
+  <!-- Script -->
   <script src="./script.js"></script>
 </body>
 </html>
