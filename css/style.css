@@ -1,9 +1,9 @@
 :root {
   /* درجات السماء الليلية للثيم الداكن أساساً */
-  --navy-950: #060a12;          /* أزرق ليلي داكن جداً (قريب من الأسود) */
-  --navy-900: #0b1326;          /* عمق السماء الليلي */
-  --navy-800: #132240;          /* كحلي منتصف الليل */
-  --navy-600: #1d3557;          /* أزرق ليلي متوسط */
+  --navy-950: #04070d;          /* أزرق ليلي شديد السواد */
+  --navy-900: #080e1a;          /* عمق السماء الليلي */
+  --navy-800: #0f1b33;          /* كحلي داكن جداً */
+  --navy-600: #1a2e52;          /* أزرق ليلي متوسط */
   --mist: #e2e8f0;              /* ضوء القمر / فضي ناعم */
   --white: #f8fafc;
   --font: "Outfit", system-ui, sans-serif;
@@ -13,72 +13,35 @@
   --header-h: 76px;
   --max: 1160px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --shadow-sm: 0 6px 16px rgba(3, 7, 18, 0.4);
-  --shadow-md: 0 14px 32px rgba(3, 7, 18, 0.6);
-  --shadow-lg: 0 28px 60px rgba(3, 7, 18, 0.8);
-  --shadow-glow: 0 0 0 1px rgba(56, 189, 248, 0.25), 0 18px 48px rgba(11, 19, 38, 0.6);
-}
 
-[data-theme="dark"] {
+  /* متغیرات الثيم الداكن افتراضياً */
   --bg: var(--navy-950);
-  --bg-elev: rgba(11, 19, 38, 0.75);
-  --bg-soft: rgba(19, 34, 64, 0.55);
+  --bg-elev: rgba(8, 14, 26, 0.85);
+  --bg-soft: rgba(15, 27, 51, 0.65);
   --text: var(--mist);
   --muted: #94a3b8;             /* رمادي سماوي هادئ */
   --line: rgba(226, 232, 240, 0.12);
   --accent: #38bdf8;            /* أزرق سماوي مضيء (تأثير توهج النجوم) */
   --accent-strong: #7dd3fc;     /* سماوي فاتح متوهج */
-  --card: rgba(11, 19, 38, 0.65);
-  --card-hover: rgba(19, 34, 64, 0.82);
-  --btn-bg: linear-gradient(135deg, #1d3557, #0b1326);
+  --card: rgba(8, 14, 26, 0.75);
+  --card-hover: rgba(15, 27, 51, 0.9);
+  --btn-bg: linear-gradient(135deg, #1a2e52, #080e1a);
   --btn-text: var(--white);
   --ghost-bg: rgba(226, 232, 240, 0.05);
-  --header-bg: rgba(6, 10, 18, 0.55);
-  --header-scrolled: rgba(6, 10, 18, 0.88);
-  --grid: rgba(56, 189, 248, 0.04);
-  --glow-a: rgba(56, 189, 248, 0.18);
-  --glow-b: rgba(29, 53, 87, 0.35);
+  --header-bg: rgba(4, 7, 13, 0.65);
+  --header-scrolled: rgba(4, 7, 13, 0.92);
+  --glow-a: rgba(56, 189, 248, 0.22);
+  --glow-b: rgba(26, 46, 82, 0.45);
   --focus: #7dd3fc;
   --error: #f87171;
   --ok: #4ade80;
-  --input: rgba(6, 10, 18, 0.7);
-  --wash-a: rgba(19, 34, 64, 0.6);
-  --wash-b: rgba(29, 53, 87, 0.3);
-  --shadow-sm: 0 8px 18px rgba(2, 4, 10, 0.5);
-  --shadow-md: 0 16px 36px rgba(2, 4, 10, 0.65);
-  --shadow-lg: 0 32px 70px rgba(2, 4, 10, 0.85);
-  --shadow-glow: 0 0 0 1px rgba(56, 189, 248, 0.2), 0 20px 50px rgba(2, 4, 10, 0.7);
-}
-
-[data-theme="light"] {
-  --bg: #e2e8f0;
-  --bg-elev: rgba(255, 255, 255, 0.65);
-  --bg-soft: rgba(255, 255, 255, 0.8);
-  --text: #0b1326;
-  --muted: #475569;
-  --line: rgba(11, 19, 38, 0.12);
-  --accent: #0284c7;
-  --accent-strong: #0369a1;
-  --card: rgba(255, 255, 255, 0.65);
-  --card-hover: rgba(255, 255, 255, 0.88);
-  --btn-bg: linear-gradient(135deg, #1d3557, #0b1326);
-  --btn-text: #ffffff;
-  --ghost-bg: rgba(11, 19, 38, 0.04);
-  --header-bg: rgba(226, 232, 240, 0.45);
-  --header-scrolled: rgba(226, 232, 240, 0.9);
-  --grid: rgba(11, 19, 38, 0.05);
-  --glow-a: rgba(2, 132, 199, 0.12);
-  --glow-b: rgba(29, 53, 87, 0.1);
-  --focus: #0284c7;
-  --error: #dc2626;
-  --ok: #16a34a;
-  --input: rgba(255, 255, 255, 0.85);
-  --wash-a: rgba(56, 189, 248, 0.12);
-  --wash-b: rgba(29, 53, 87, 0.08);
-  --shadow-sm: 0 6px 16px rgba(11, 19, 38, 0.08);
-  --shadow-md: 0 14px 30px rgba(11, 19, 38, 0.12);
-  --shadow-lg: 0 28px 56px rgba(11, 19, 38, 0.16);
-  --shadow-glow: 0 0 0 1px rgba(2, 132, 199, 0.15), 0 18px 40px rgba(11, 19, 38, 0.1);
+  --input: rgba(4, 7, 13, 0.8);
+  --wash-a: rgba(15, 27, 51, 0.7);
+  --wash-b: rgba(26, 46, 82, 0.4);
+  --shadow-sm: 0 8px 18px rgba(2, 4, 10, 0.6);
+  --shadow-md: 0 16px 36px rgba(2, 4, 10, 0.75);
+  --shadow-lg: 0 32px 70px rgba(2, 4, 10, 0.9);
+  --shadow-glow: 0 0 0 1px rgba(56, 189, 248, 0.25), 0 20px 50px rgba(2, 4, 10, 0.8);
 }
 
 *,
@@ -154,6 +117,7 @@ ul {
   top: 12px;
 }
 
+/* خلفية النجوم والتوهج الليلية (بدون مربعات) */
 .bg-scene {
   position: fixed;
   inset: 0;
@@ -162,35 +126,52 @@ ul {
   overflow: hidden;
 }
 
+/* طبقات النجوم المضيئة المتلألئة */
 .bg-grid {
   position: absolute;
-  inset: -20%;
-  background-image:
-    linear-gradient(var(--grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-size: 48px 48px;
-  transform: translate3d(0, 0, 0);
-  animation: gridDrift 28s linear infinite;
+  inset: 0;
+  background: transparent;
+  /* توليد النجوم عبر Box Shadows متعدد النقاط */
+  box-shadow: 
+    12vw 15vh 2px 1px #fff, 28vw 45vh 1px 1px rgba(255, 255, 255, 0.8), 45vw 12vh 2px 0px #7dd3fc,
+    65vw 35vh 1px 1px #fff, 82vw 18vh 2px 1px rgba(255, 255, 255, 0.9), 92vw 62vh 1px 0px #38bdf8,
+    18vw 78vh 2px 1px #fff, 34vw 88vh 1px 1px rgba(255, 255, 255, 0.7), 58vw 68vh 2px 1px #7dd3fc,
+    74vw 82vh 1px 1px #fff, 88vw 92vh 2px 0px rgba(255, 255, 255, 0.8), 08vw 52vh 1px 1px #38bdf8,
+    38vw 28vh 2px 1px #fff, 52vw 42vh 1px 0px rgba(255, 255, 255, 0.6), 78vw 08vh 2px 1px #7dd3fc;
+  border-radius: 50%;
+  animation: starTwinkle 4s ease-in-out infinite alternate;
+}
+
+.bg-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: 
+    05vw 25vh 1px 1px rgba(255, 255, 255, 0.8), 22vw 65vh 2px 0px #38bdf8, 39vw 05vh 1px 1px #fff,
+    51vw 85vh 2px 1px rgba(255, 255, 255, 0.9), 68vw 22vh 1px 0px #7dd3fc, 85vw 48vh 2px 1px #fff,
+    15vw 95vh 1px 1px #fff, 30vw 38vh 2px 1px rgba(255, 255, 255, 0.7), 61vw 18vh 1px 1px #38bdf8;
+  border-radius: 50%;
+  animation: starTwinkle 6s ease-in-out infinite alternate-reverse;
 }
 
 .bg-glow {
   position: absolute;
-  width: 42vw;
-  height: 42vw;
+  width: 45vw;
+  height: 45vw;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.65;
+  filter: blur(100px);
+  opacity: 0.6;
 }
 
 .bg-glow-a {
   background: var(--glow-a);
-  top: -8%;
-  right: -8%;
+  top: -10%;
+  right: -10%;
 }
 
 .bg-glow-b {
   background: var(--glow-b);
-  bottom: 8%;
+  bottom: 5%;
   left: -10%;
 }
 
@@ -241,7 +222,7 @@ ul {
   color: var(--accent);
   margin-bottom: 10px;
   font-weight: 500;
-  text-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
 }
 
 .site-header {
@@ -289,7 +270,7 @@ ul {
   background: linear-gradient(135deg, var(--navy-600), var(--accent));
   color: var(--white);
   font-size: 0.78rem;
-  box-shadow: 0 0 14px rgba(56, 189, 248, 0.3);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.35);
 }
 
 .nav-list {
@@ -322,7 +303,7 @@ ul {
   height: 2px;
   border-radius: 99px;
   background: linear-gradient(90deg, var(--accent), var(--accent-strong));
-  box-shadow: 0 0 8px var(--accent);
+  box-shadow: 0 0 10px var(--accent);
 }
 
 .nav-panel {
@@ -380,9 +361,12 @@ ul {
   height: 18px;
 }
 
-[data-theme="dark"] .icon-sun,
-[data-theme="light"] .icon-moon {
-  display: none;
+/* إخفاء أيقونة الشمس وإظهار القمر لثيم الليل دائمًا */
+.icon-sun {
+  display: none !important;
+}
+.icon-moon {
+  display: block !important;
 }
 
 .glass-card,
@@ -405,8 +389,8 @@ ul {
 .glass-card:hover {
   transform: translateY(-6px);
   background: var(--card-hover);
-  border-color: rgba(56, 189, 248, 0.4);
-  box-shadow: var(--shadow-lg), 0 0 20px rgba(56, 189, 248, 0.15);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: var(--shadow-lg), 0 0 24px rgba(56, 189, 248, 0.2);
 }
 
 .hero {
@@ -436,7 +420,7 @@ ul {
   min-height: 1.6em;
   color: var(--accent-strong);
   margin-bottom: 14px;
-  text-shadow: 0 0 8px rgba(56, 189, 248, 0.25);
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.35);
 }
 
 .typed-cursor {
@@ -482,8 +466,8 @@ ul {
 .btn-primary {
   background: var(--btn-bg);
   color: var(--btn-text);
-  box-shadow: var(--shadow-md), 0 0 15px rgba(56, 189, 248, 0.2);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: var(--shadow-md), 0 0 18px rgba(56, 189, 248, 0.25);
+  border: 1px solid rgba(56, 189, 248, 0.4);
 }
 
 .btn-ghost {
@@ -506,7 +490,7 @@ ul {
 
 .orbit {
   position: absolute;
-  border: 1px dashed rgba(56, 189, 248, 0.25);
+  border: 1px dashed rgba(56, 189, 248, 0.28);
   border-radius: 50%;
 }
 
@@ -539,7 +523,7 @@ ul {
 .portrait-glow {
   position: absolute;
   inset: -20%;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.3), transparent 60%);
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.35), transparent 60%);
   z-index: 0;
 }
 
@@ -566,7 +550,7 @@ ul {
   display: grid;
   place-items: center;
   background:
-    linear-gradient(160deg, rgba(29, 53, 87, 0.5), rgba(6, 10, 18, 0.3)),
+    linear-gradient(160deg, rgba(26, 46, 82, 0.6), rgba(4, 7, 13, 0.4)),
     repeating-linear-gradient(90deg, transparent, transparent 18px, rgba(226, 232, 240, 0.05) 19px);
   color: var(--text);
 }
@@ -678,7 +662,7 @@ ul {
   height: 16px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--accent), var(--navy-600));
-  box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
 }
 
 .meta,
@@ -731,7 +715,7 @@ ul {
   place-items: center;
   border-radius: 12px;
   margin-bottom: 12px;
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(11, 19, 38, 0.4));
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(8, 14, 26, 0.5));
   border: 1px solid var(--line);
   color: var(--accent);
 }
@@ -983,6 +967,13 @@ ul {
   animation: slideIn 0.8s var(--ease) forwards;
 }
 
+/* الأنيماشن للنجوم والتأثيرات */
+@keyframes starTwinkle {
+  0% { opacity: 0.3; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 0.4; transform: scale(1); }
+}
+
 @keyframes blink {
   50% { opacity: 0; }
 }
@@ -993,10 +984,6 @@ ul {
 
 @keyframes spin {
   to { transform: rotate(360deg); }
-}
-
-@keyframes gridDrift {
-  to { transform: translate3d(0, 48px, 0); }
 }
 
 @keyframes rise {
