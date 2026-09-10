@@ -1,5 +1,5 @@
 :root {
-  /* درجات السماء الليلية الداكنة */
+  /* Dark space themes */
   --navy-950: #04070d;          
   --navy-900: #080e1a;          
   --navy-800: #0f1b33;          
@@ -14,15 +14,15 @@
   --max: 1160px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 
-  /* المتغيرات الأساسية للثيم الداكن */
+  /* Core theme variables */
   --bg: var(--navy-950);
   --bg-elev: rgba(8, 14, 26, 0.85);
   --bg-soft: rgba(15, 27, 51, 0.65);
   --text: var(--mist);
   --muted: #94a3b8;
   --line: rgba(226, 232, 240, 0.12);
-  --accent: #38bdf8;            /* أزرق سماوي مضيء */
-  --accent-strong: #7dd3fc;     /* سماوي متوهج */
+  --accent: #38bdf8;
+  --accent-strong: #7dd3fc;
   --card: rgba(8, 14, 26, 0.75);
   --card-hover: rgba(15, 27, 51, 0.9);
   --btn-bg: linear-gradient(135deg, #1a2e52, #080e1a);
@@ -73,7 +73,7 @@ ul { padding: 0; list-style: none; }
 }
 .skip-link:focus { top: 12px; }
 
-/* خلفية النجوم (تم إلغاء الشبكة والمستطيلات تماماً) */
+/* Background stars */
 .bg-scene {
   position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
 }
@@ -150,11 +150,7 @@ ul { padding: 0; list-style: none; }
 }
 .nav-toggle-bar { width: 18px; height: 1.8px; background: var(--text); border-radius: 99px; }
 
-/* =========================================================
-   تنوير وإضاءة الأيقونات والزرارير عند الـ Hover
-   ========================================================= */
-
-/* 1. أيقونات المهارات (Skills) */
+/* Icon hover glow effects */
 .skill-icon, 
 i[class^="devicon-"], 
 i[class*=" devicon-"], 
@@ -171,7 +167,6 @@ i[class*=" devicon-"],
   filter: drop-shadow(0 0 12px #38bdf8) drop-shadow(0 0 25px #38bdf8) !important;
 }
 
-/* 2. أيقونات التواصل الاجتماعي (Social Links) */
 .social-list a {
   transition: all 0.3s var(--ease) !important;
 }
@@ -189,7 +184,6 @@ i[class*=" devicon-"],
   filter: drop-shadow(0 0 8px #38bdf8) !important;
 }
 
-/* 3. زر الثيم وزر الصعود بالأعلى */
 .theme-toggle, .to-top {
   width: 44px; height: 44px; border: 1px solid var(--line); background: var(--ghost-bg);
   border-radius: 12px; display: grid; place-items: center; cursor: pointer;
@@ -205,7 +199,6 @@ i[class*=" devicon-"],
 
 .theme-toggle svg, .to-top svg { width: 18px; height: 18px; }
 
-/* تصميم الكروت بدون أي خطوط خلفية موازية */
 .glass-card, .portrait-frame, .about-frame, .contact-form {
   background: var(--card);
   border: 1px solid var(--line);
