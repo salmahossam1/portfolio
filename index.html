@@ -1,347 +1,608 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personal Portfolio</title>
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  
-  <!-- Devicon Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
-  
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salma Hossam | Data Analyst | AI &amp; Data Science</title>
+  <meta name="description" content="Salma Hossam is a Computer Science student specializing in Artificial Intelligence and Data Science. She focuses on data analysis, Power BI, machine learning, and data engineering.">
+  <meta name="keywords" content="Salma Hossam, Data Analyst, AI, Data Science, Power BI, Machine Learning, Data Engineering, Business Intelligence">
+  <meta name="author" content="Salma Hossam">
+  <meta property="og:title" content="Salma Hossam | Data Analyst | AI &amp; Data Science">
+  <meta property="og:description" content="Turning raw data into clear insights, interactive dashboards, and intelligent solutions.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/profile1.jpeg">
+  <meta name="theme-color" content="#1B3C53">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
-
-  <!-- Stars & Background Glow -->
   <div class="bg-scene" aria-hidden="true">
     <div class="bg-grid"></div>
     <div class="bg-glow bg-glow-a"></div>
     <div class="bg-glow bg-glow-b"></div>
+    <canvas id="dataCanvas"></canvas>
   </div>
 
-  <!-- Header / Navigation -->
-  <header class="site-header" id="header">
-    <div class="navbar">
-      <a href="#hero" class="brand">
-        <span class="brand-mark">AI</span>
-        <span class="brand-text">Portfolio</span>
+  <a class="skip-link" href="#home">Skip to content</a>
+
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar" aria-label="Primary">
+      <a class="brand" href="#home">
+        <span class="brand-mark" aria-hidden="true">SH</span>
+        <span class="brand-text">Salma Hossam</span>
       </a>
 
-      <div class="nav-panel" id="navPanel">
+      <button class="nav-toggle" id="navToggle" type="button" aria-controls="navMenu" aria-expanded="false" aria-label="Open menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <div class="nav-panel" id="navMenu">
         <ul class="nav-list">
-          <li><a href="#hero" class="nav-link is-active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a class="nav-link is-active" href="#home">Home</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#education">Education</a></li>
+          <li><a class="nav-link" href="#experience">Experience</a></li>
+          <li><a class="nav-link" href="#skills">Skills</a></li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="#testimonials">Testimonials</a></li>
+          <li><a class="nav-link" href="#services">Services</a></li>
+          <li><a class="nav-link" href="#contact">Get In Touch</a></li>
         </ul>
       </div>
 
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-        <svg class="icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-        </svg>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.8v2.2M12 19v2.2M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2.8 12h2.2M19 12h2.2M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.2 14.4A7.4 7.4 0 1 1 9.6 4.8 6.2 6.2 0 0 0 19.2 14.4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
       </button>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Open Menu">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-    </div>
+    </nav>
   </header>
 
-  <main id="main">
-    <!-- Hero Section -->
-    <section class="section hero" id="hero">
+  <main>
+    <section class="section hero" id="home">
       <div class="container hero-grid">
-        <div class="hero-content reveal">
-          <p class="eyebrow">Welcome to my universe</p>
-          <h1 class="hero-title">AI & Data Science Developer</h1>
-          <div class="typed-line"><span id="typedText"></span><span class="typed-cursor">|</span></div>
-          <p class="hero-lead">Specialized in building machine learning models, analyzing complex datasets, creating interactive dashboards, and transforming big data into intelligent solutions.</p>
-          
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Hello, I'm</p>
+          <h1>Salma Hossam</h1>
+          <p class="typed-line" aria-live="polite">
+            <span id="typedText"></span><span class="typed-cursor" aria-hidden="true">|</span>
+          </p>
+          <p class="hero-role">Data Analyst | AI &amp; Data Science Student</p>
+          <p class="hero-lead">I transform raw data into clear insights, interactive dashboards, intelligent solutions, and smarter decisions.</p>
           <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">View Projects</a>
-            <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+            <a class="btn btn-primary" href="#projects">View My Work</a>
+            <a class="btn btn-ghost" href="#contact">Let's Work Together</a>
           </div>
         </div>
 
         <div class="hero-visual reveal reveal-right">
-          <div class="orbit orbit-a"></div>
-          <div class="orbit orbit-b"></div>
+          <div class="orbit orbit-a" aria-hidden="true"></div>
+          <div class="orbit orbit-b" aria-hidden="true"></div>
           <div class="portrait-frame">
-            <div class="portrait-glow"></div>
-            <div class="portrait-fallback">
-              <span>AI</span>
-              <small>Data Specialist</small>
-            </div>
+            <div class="portrait-glow" aria-hidden="true"></div>
+            <div class="portrait-fallback" aria-hidden="true"></div>
+            <img src="assets/images/profile1.jpeg" alt="Profile" loading="lazy">
+          </div>
+          <div class="hero-chips" aria-hidden="true">
+            <span class="chip">Analytics</span>
+            <span class="chip">Machine Learning</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
     <section class="section" id="about">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">About Me</p>
-          <h2>Passionate About AI & Data Driven Solutions</h2>
-        </div>
+        <header class="section-head reveal">
+          <p class="eyebrow">Introduction</p>
+          <h2>About Me</h2>
+          <p class="section-intro">A Computer Science student focused on turning complex data into practical, decision-ready work.</p>
+        </header>
 
         <div class="about-layout">
-          <div class="about-frame glass-card reveal">
-            <div class="portrait-fallback">
-              <span>Dev</span>
+          <div class="about-media reveal">
+            <div class="about-frame">
+              <div class="portrait-fallback" aria-hidden="true">
+                <span>SH</span>
+                <small>Optional photo</small>
+              </div>
+              <img src="assets/images/profile2.jpeg" alt="Salma Hossam portrait" loading="lazy">
             </div>
           </div>
 
-          <div class="about-copy glass-card reveal">
-            <p>I specialize in Artificial Intelligence and Data Science. My focus is on developing machine learning algorithms and deep learning workflows using modern libraries and tools.</p>
-            <p>I also have hands-on experience in data engineering, exploratory data analysis, and constructing interactive web applications to showcase data insights seamlessly.</p>
-
-            <div class="stat-grid">
-              <div class="stat-card">
-                <strong>+10</strong>
-                <span>Projects Done</span>
-              </div>
-              <div class="stat-card">
-                <strong>ML / AI</strong>
-                <span>Specialization</span>
-              </div>
-              <div class="stat-card">
-                <strong>SQL / NoSQL</strong>
-                <span>Databases</span>
-              </div>
-              <div class="stat-card">
-                <strong>100%</strong>
-                <span>Commitment</span>
-              </div>
-            </div>
+          <div class="about-copy reveal">
+            <p>I am a Computer Science student specializing in Artificial Intelligence and Data Science. My work sits at the intersection of analysis, business intelligence, and applied machine learning.</p>
+            <p>I am interested in data analysis, business intelligence, machine learning, data engineering, and AI automation. I approach problems by cleaning and structuring data first, then exploring patterns, building models or dashboards, and presenting findings that can support real decisions.</p>
+            <p>I am continuously learning — from SQL and Python to Azure, Power BI, and end-to-end data workflows — with a focus on turning raw and complex data into clear insights, useful dashboards, intelligent solutions, and practical outcomes.</p>
           </div>
+        </div>
+
+        <div class="stat-grid">
+          <article class="glass-card stat-card reveal">
+            <strong>B.Sc.</strong>
+            <span>Computer Science</span>
+          </article>
+          <article class="glass-card stat-card reveal">
+            <strong>AI &amp; DS</strong>
+            <span>Specialization</span>
+          </article>
+          <article class="glass-card stat-card reveal">
+            <strong>3.8</strong>
+            <span>GPA</span>
+          </article>
+          <article class="glass-card stat-card reveal">
+            <strong>2028</strong>
+            <span>Expected graduation</span>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Skills Section -->
+    <section class="section" id="education">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Academic path</p>
+          <h2>Education</h2>
+          <p class="section-intro">Formal study and focused training in data, AI, and engineering fundamentals.</p>
+        </header>
+
+        <div class="timeline">
+          <article class="glass-card timeline-card reveal">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <p class="meta">2024 – 2028</p>
+            <h3>Bachelor of Computer Science</h3>
+            <p class="card-kicker">Faculty of Computers and Information</p>
+            <p>Specialization in Artificial Intelligence &amp; Data Science. Current GPA: 3.7.</p>
+          </article>
+
+          <article class="glass-card timeline-card reveal">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <p class="meta">Training</p>
+            <h3>Microsoft Data Engineer Track</h3>
+            <p class="card-kicker">Rwad Masr El-Raqmeya / Microsoft Data Engineer Track</p>
+            <ul class="tag-list">
+              <li>Microsoft SQL</li>
+              <li>SQL Data Warehouse</li>
+              <li>Python</li>
+              <li>Data Science with Python</li>
+              <li>Azure Data Fundamentals</li>
+              <li>Azure Data Engineering</li>
+              <li>Data Engineering</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Applied learning</p>
+          <h2>Experience</h2>
+          <p class="section-intro">Hands-on training in data engineering, SQL, Python, and cloud data concepts.</p>
+        </header>
+
+        <div class="timeline">
+          <article class="glass-card timeline-card reveal">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <p class="meta">Training / Internship-style track</p>
+            <h3>Microsoft Data Engineer Track</h3>
+            <p class="card-kicker">Rwad Masr El-Raqmeya</p>
+            <p>Focused on building a practical foundation for moving, storing, and analyzing data — from SQL and warehousing to Python, Azure, and pipeline thinking.</p>
+            <ul class="tag-list">
+              <li>SQL</li>
+              <li>Data Engineering</li>
+              <li>Python</li>
+              <li>Data Science</li>
+              <li>Azure</li>
+              <li>Data Warehousing</li>
+              <li>Data Pipelines</li>
+              <li>ETL</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="skills">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Tech Stack</p>
-          <h2>Skills & Expertise</h2>
-        </div>
+        <header class="section-head reveal">
+          <p class="eyebrow">Toolkit</p>
+          <h2>Skills</h2>
+          <p class="section-intro">Organized by how the work actually happens: code, analysis, storage, models, and pipelines.</p>
+        </header>
 
         <div class="skills-grid">
-          <div class="glass-card skill-group reveal">
-            <div class="skill-icon">
-              <i class="devicon-python-plain"></i>
+          <article class="glass-card skill-group reveal">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 16l-4-4 4-4M16 8l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            <h3>Machine Learning & AI</h3>
-            <p class="section-intro">Building predictive models, classification, regression, and data preprocessing.</p>
+            <h3>Programming &amp; Data</h3>
             <ul class="skill-tags">
               <li>Python</li>
-              <li>Scikit-Learn</li>
-              <li>XGBoost</li>
-              <li>CatBoost</li>
-              <li>PySpark</li>
+              <li>C++</li>
+              <li>C</li>
+              <li>Pandas</li>
+              <li>NumPy</li>
             </ul>
-          </div>
+          </article>
 
-          <div class="glass-card skill-group reveal">
-            <div class="skill-icon">
-              <i class="devicon-postgresql-plain"></i>
+          <article class="glass-card skill-group reveal">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15v4M12 11v8M16 8v11" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
             </div>
-            <h3>Data Engineering & SQL</h3>
-            <p class="section-intro">Designing database schemas, complex SQL queries, and ORM integrations.</p>
+            <h3>Data Analysis &amp; BI</h3>
             <ul class="skill-tags">
-              <li>PostgreSQL</li>
-              <li>MS SQL Server</li>
-              <li>SQLAlchemy</li>
-              <li>Data Warehousing</li>
-            </ul>
-          </div>
-
-          <div class="glass-card skill-group reveal">
-            <div class="skill-icon">
-              <i class="devicon-matcha-plain"></i>
-            </div>
-            <h3>Visualization & Dashboards</h3>
-            <p class="section-intro">Building interactive web dashboards and executive analytical reports.</p>
-            <ul class="skill-tags">
-              <li>Streamlit</li>
+              <li>Excel</li>
               <li>Power BI</li>
-              <li>Tableau</li>
-              <li>Plotly / Seaborn</li>
+              <li>Data Cleaning</li>
+              <li>Exploratory Data Analysis</li>
+              <li>Data Visualization</li>
+              <li>KPI Analysis</li>
+              <li>Dashboard Development</li>
             </ul>
-          </div>
+          </article>
 
-          <div class="glass-card skill-group reveal">
-            <div class="skill-icon">
-              <i class="devicon-git-plain"></i>
+          <article class="glass-card skill-group reveal">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
             </div>
-            <h3>Development & Tools</h3>
-            <p class="section-intro">Version control systems, web application interfaces, and deployment.</p>
+            <h3>Databases &amp; SQL</h3>
             <ul class="skill-tags">
-              <li>Git / GitHub</li>
-              <li>CSS / UI Glassmorphism</li>
-              <li>REST APIs</li>
+              <li>SQL</li>
+              <li>MySQL</li>
+              <li>MongoDB</li>
+              <li>SQL Data Warehousing</li>
+              <li>Database Analysis</li>
             </ul>
-          </div>
+          </article>
+
+          <article class="glass-card skill-group reveal">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 5v2M12 17v2M5 12h2M17 12h2M7.1 7.1l1.4 1.4M15.5 15.5l1.4 1.4M7.1 16.9l1.4-1.4M15.5 8.5l1.4-1.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Machine Learning &amp; AI</h3>
+            <ul class="skill-tags">
+              <li>Machine Learning</li>
+              <li>Regression</li>
+              <li>Feature Engineering</li>
+              <li>Data Preprocessing</li>
+              <li>Model Evaluation</li>
+            </ul>
+          </article>
+
+          <article class="glass-card skill-group reveal skill-group-wide">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 7h6l2 3h8M4 17h7l2-3h7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="7" r="2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="18" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            </div>
+            <h3>Data Engineering</h3>
+            <ul class="skill-tags">
+              <li>ETL</li>
+              <li>Data Pipelines</li>
+              <li>Microsoft Azure</li>
+              <li>Azure Data Fundamentals</li>
+              <li>Azure Data Engineering</li>
+              <li>Apache Airflow</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
     <section class="section" id="projects">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Recent Work</p>
-          <h2>Featured Projects</h2>
-        </div>
+        <header class="section-head reveal">
+          <p class="eyebrow">Selected work</p>
+          <h2>Projects</h2>
+          <p class="section-intro">Applied analysis, modeling, and data engineering — not just coursework slides.</p>
+        </header>
 
         <div class="projects-grid">
-          <div class="glass-card project-card reveal">
+          <article class="glass-card project-card reveal">
             <div class="project-media">
-              <div class="portrait-fallback"><span>SpeedCar</span></div>
+              <div class="portrait-fallback" aria-hidden="true">
+                <span>01</span>
+                <small>Project image</small>
+              </div>
+              <img src="assets/images/1.png" alt="SpeedCar Project" loading="lazy">
             </div>
             <div class="project-body">
-              <span class="card-kicker">Machine Learning</span>
-              <h3>SpeedCar - AI Analytics App</h3>
-              <p>Engine horsepower prediction application using Random Forest regressor deployed via Streamlit.</p>
+              <h3>SpeedCar – Automotive Analytics &amp; Machine Learning</h3>
+              <p>An automotive data analysis project focused on analyzing vehicle specifications and building a Machine Learning regression model to predict car Power (hp).</p>
+              <p class="card-kicker">Workflow</p>
+              <ul class="tag-list">
+                <li>Data Cleaning</li>
+                <li>Data Preprocessing</li>
+                <li>Exploratory Data Analysis</li>
+                <li>Feature Engineering</li>
+                <li>Encoding</li>
+                <li>Model Training</li>
+                <li>Model Evaluation</li>
+                <li>Prediction</li>
+              </ul>
+              <p class="card-kicker">Technologies</p>
               <ul class="tag-list">
                 <li>Python</li>
+                <li>Pandas</li>
+                <li>NumPy</li>
+                <li>Scikit-learn</li>
+                <li>Machine Learning</li>
+                <li>Data Visualization</li>
                 <li>Streamlit</li>
-                <li>Scikit-Learn</li>
               </ul>
+              <div class="project-actions">
+                <a class="btn btn-primary btn-sm" href="https://github.com/salmahossam1/SpeedCar-Automotive-Analytics-AI" target="_blank" rel="noopener">View Project</a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/salmahossam1" target="_blank" rel="noopener">GitHub</a>
+              </div>
             </div>
-            <div class="project-actions">
-              <a href="#" class="btn btn-ghost btn-sm">Details</a>
-            </div>
-          </div>
+          </article>
 
-          <div class="glass-card project-card reveal">
+          <article class="glass-card project-card reveal">
             <div class="project-media">
-              <div class="portrait-fallback"><span>Dashboard</span></div>
+              <div class="portrait-fallback" aria-hidden="true">
+                <span>02</span>
+                <small>Project image</small>
+              </div>
+              <img src="assets/images/2.png" alt="Smart Customer Analytics Device" loading="lazy">
             </div>
             <div class="project-body">
-              <span class="card-kicker">Business Intelligence</span>
-              <h3>Retail Performance Dashboard</h3>
-              <p>Interactive Tableau dashboard featuring custom calculated fields, sales KPI tracking, and box plots.</p>
+              <h3>Smart Customer Analytics Device</h3>
+              <p>A Data Engineering and Real-Time Analytics project involving data ingestion, ETL, data integration, databases, and analytics.</p>
+              <p class="card-kicker">Technologies / Concepts</p>
               <ul class="tag-list">
-                <li>Tableau</li>
-                <li>Data Analysis</li>
-                <li>Calculated Fields</li>
+                <li>Python</li>
+                <li>SQL</li>
+                <li>MySQL</li>
+                <li>MongoDB</li>
+                <li>Apache Airflow</li>
+                <li>ETL</li>
+                <li>Data Pipelines</li>
+                <li>Data Integration</li>
+                <li>Microsoft Azure</li>
+                <li>Real-Time Analytics</li>
               </ul>
+              <div class="project-actions">
+              </div>
             </div>
-            <div class="project-actions">
-              <a href="#" class="btn btn-ghost btn-sm">Details</a>
-            </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Services Section -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Feedback</p>
+          <h2>Testimonials</h2>
+          <p class="section-intro">This space is ready for real feedback.</p>
+        </header>
+
+        <div class="testimonials-grid">
+          <article class="glass-card testimonial-card reveal" aria-label="Testimonial placeholder 1">
+            <div class="testimonial-meta">
+              <span class="avatar-dot" aria-hidden="true"></span>
+              <div>
+                <strong>Nada Ahmed</strong>
+                <span>“Great work and attention to detail. The data was well organized, and the final result looked professional.”</span>
+              </div>
+            </div>
+          </article>
+          <article class="glass-card testimonial-card reveal" aria-label="Testimonial placeholder 2">
+            <div class="testimonial-meta">
+              <span class="avatar-dot" aria-hidden="true"></span>
+              <div>
+                <strong>Omar Khaled</strong>
+                <span>“Very smooth experience. The project was delivered on time, with clear communication and excellent results.”</span>
+              </div>
+            </div>
+          </article>
+          <article class="glass-card testimonial-card reveal" aria-label="Testimonial placeholder 3">
+            <div class="testimonial-meta">
+              <span class="avatar-dot" aria-hidden="true"></span>
+              <div>
+                <strong>Abdelrahman Ali</strong>
+                <span>“Salma delivered a clean and professional dashboard that made our data much easier to understand.”</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="services">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Services</p>
-          <h2>What I Can Do</h2>
-        </div>
+        <header class="section-head reveal">
+          <p class="eyebrow">How I can help</p>
+          <h2>Services</h2>
+          <p class="section-intro">Practical data work: analysis, dashboards, preparation, SQL, modeling, and pipelines.</p>
+        </header>
 
         <div class="services-grid">
-          <div class="glass-card service-card reveal">
-            <h3>Machine Learning Development</h3>
-            <p>Training and deploying predictive models tailored to classification, regression, and clustering tasks.</p>
+          <article class="glass-card service-card reveal">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 19V5h16M8 15l3-3 3 2 4-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Data Analysis</h3>
+            <p>Transform raw data into meaningful insights that help support better decisions.</p>
             <ul class="cap-list">
-              <li>Regression Models</li>
-              <li>Classification</li>
-              <li>Clustering</li>
-            </ul>
-          </div>
-
-          <div class="glass-card service-card reveal">
-            <h3>Dashboards & Business Analytics</h3>
-            <p>Transforming raw data into clear, interactive visual dashboards for efficient decision-making.</p>
-            <ul class="cap-list">
-              <li>Power BI & Tableau</li>
-              <li>Streamlit Apps</li>
+              <li>Data Exploration</li>
               <li>Data Cleaning</li>
+              <li>Data Preprocessing</li>
+              <li>EDA</li>
+              <li>Trend Analysis</li>
+              <li>Data-Driven Insights</li>
             </ul>
-          </div>
+            <a class="btn btn-ghost btn-sm" href="#contact">Let's Work Together</a>
+          </article>
+
+          <article class="glass-card service-card reveal">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 14v2M12 10v6M16 8v8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Power BI Dashboards</h3>
+            <p>Build clear and interactive dashboards that turn complex data into decision-ready visual insights.</p>
+            <ul class="cap-list">
+              <li>Interactive Dashboards</li>
+              <li>KPI Tracking</li>
+              <li>Data Visualization</li>
+              <li>Business Reporting</li>
+              <li>Performance Monitoring</li>
+              <li>Data Storytelling</li>
+            </ul>
+            <a class="btn btn-ghost btn-sm" href="#contact">Let's Work Together</a>
+          </article>
+
+          <article class="glass-card service-card reveal">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h10M4 17h7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M16 14l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Data Cleaning &amp; Preparation</h3>
+            <p>Prepare messy and inconsistent datasets for reliable analysis and modeling.</p>
+            <ul class="cap-list">
+              <li>Missing Value Handling</li>
+              <li>Duplicate Detection</li>
+              <li>Data Type Correction</li>
+              <li>Data Transformation</li>
+              <li>Categorical Encoding</li>
+              <li>Feature Preparation</li>
+            </ul>
+            <a class="btn btn-ghost btn-sm" href="#contact">Let's Work Together</a>
+          </article>
+
+          <article class="glass-card service-card reveal">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 19h14M7 16V8m5 8V5m5 11v-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </div>
+            <h3>SQL &amp; Database Solutions</h3>
+            <p>Work with structured data and databases to extract, transform, and organize useful information.</p>
+            <ul class="cap-list">
+              <li>SQL Queries</li>
+              <li>Data Extraction</li>
+              <li>Data Transformation</li>
+              <li>MySQL</li>
+              <li>Database Analysis</li>
+              <li>Data Warehouse Concepts</li>
+            </ul>
+            <a class="btn btn-ghost btn-sm" href="#contact">Let's Work Together</a>
+          </article>
+
+          <article class="glass-card service-card reveal">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="6.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="18" cy="12" r="2.2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="17.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 11l2-3M14 8l2 3M16.2 13.8l-2.4 2.2M10.2 16l-2.2-2.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <h3>Machine Learning</h3>
+            <p>Develop and evaluate machine learning solutions for predictive analytics use cases.</p>
+            <ul class="cap-list">
+              <li>Data Preprocessing</li>
+              <li>Feature Engineering</li>
+              <li>Regression</li>
+              <li>Model Training</li>
+              <li>Model Evaluation</li>
+              <li>Prediction</li>
+            </ul>
+            <a class="btn btn-ghost btn-sm" href="#contact">Let's Work Together</a>
+          </article>
+
+          <article class="glass-card service-card reveal">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3.5" y="4" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.7"/><rect x="14.5" y="14" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M9.5 7h5.2A2.8 2.8 0 0 1 17.5 9.8V14" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            </div>
+            <h3>Data Engineering &amp; ETL</h3>
+            <p>Build structured workflows for collecting, transforming, integrating, and processing data.</p>
+            <ul class="cap-list">
+              <li>ETL Workflows</li>
+              <li>Data Pipelines</li>
+              <li>Data Integration</li>
+              <li>MySQL</li>
+              <li>MongoDB</li>
+              <li>Apache Airflow</li>
+              <li>Microsoft Azure</li>
+            </ul>
+            <a class="btn btn-ghost btn-sm" href="#contact">Let's Work Together</a>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="section" id="contact">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Get In Touch</p>
+      <div class="container contact-layout">
+        <header class="section-head reveal">
+          <p class="eyebrow">Contact</p>
           <h2>Let's Work Together</h2>
-        </div>
+          <p class="section-intro">Have a project, business problem, or idea you'd like to turn into a data-driven solution? Let's talk.</p>
+        </header>
 
         <div class="contact-grid">
-          <form class="contact-form reveal" id="contactForm">
+          <form class="glass-card contact-form reveal" id="contactForm" novalidate>
             <div class="field">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" required placeholder="Enter your name" />
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+              <p class="field-error" data-error-for="name"></p>
             </div>
             <div class="field">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" required placeholder="example@mail.com" />
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+              <p class="field-error" data-error-for="email"></p>
+            </div>
+            <div class="field">
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" type="text" required>
+              <p class="field-error" data-error-for="subject"></p>
             </div>
             <div class="field">
               <label for="message">Message</label>
-              <textarea id="message" rows="5" required placeholder="Describe your project..."></textarea>
+              <textarea id="message" name="message" rows="5" required minlength="20"></textarea>
+              <p class="field-error" data-error-for="message"></p>
             </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-            <div class="form-status" id="formStatus"></div>
+            <button class="btn btn-primary" type="submit">Send Message</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
           </form>
 
-          <div class="glass-card contact-card reveal">
-            <h3>Contact Info</h3>
-            <p>Feel free to reach out via email or through social profiles.</p>
-
-            <ul class="social-list">
-              <li>
-                <a href="https://github.com" target="_blank" aria-label="GitHub">
-                  <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                  <span>GitHub</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-                  <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                  <span>LinkedIn</span>
-                </a>
-              </li>
-            </ul>
-          </div>
+          <aside class="contact-aside reveal">
+            <article class="glass-card contact-card">
+              <h3>Connect</h3>
+              <p>Social and email links are placeholders until the live URLs are added.</p>
+              <ul class="social-list">
+                <li>
+                  <a href="https://www.linkedin.com/in/salmaa-hossam/" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9h3v9h-3zM8 4.8A1.6 1.6 0 1 1 8 8a1.6 1.6 0 0 1 0-3.2zM11.5 9h2.9v1.2h.1c.4-.8 1.4-1.5 2.9-1.5 3.1 0 3.6 2 3.6 4.6V18h-3v-5c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V18h-2.9z" fill="currentColor"/></svg>
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/salmahossam1" target="_blank" rel="noopener" aria-label="GitHub profile">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4c-5.3 0-9.6 4.3-9.6 9.6 0 4.2 2.8 7.8 6.6 9.1.5.1.7-.2.7-.5v-1.7c-2.7.6-3.2-1.2-3.2-1.2-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.4-1.1-4.4-4.7 0-1 .4-1.9 1-2.6-.1-.2-.4-1.3.1-2.6 0 0 .8-.3 2.7 1a9.3 9.3 0 0 1 4.9 0c1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.4.1 2.6.6.7 1 1.6 1 2.6 0 3.6-2.3 4.5-4.4 4.7.4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 3.8-1.3 6.6-4.9 6.6-9.1 0-5.3-4.3-9.6-9.6-9.6z" fill="currentColor"/></svg>
+                    GitHub
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:salmahossamwbs1@gmail.com" aria-label="Email contact">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                    Email
+                  </a>
+                </li>
+              </ul>
+            </article>
+          </aside>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container text-center">
-      <p>All rights reserved &copy; 2026</p>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Salma Hossam. Data Analyst | AI &amp; Data Science Student.</p>
     </div>
   </footer>
 
-  <button class="to-top" id="toTop" aria-label="Scroll to top">
-    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 14l6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </button>
 
-  <!-- Script -->
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
