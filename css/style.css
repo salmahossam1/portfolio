@@ -17,7 +17,7 @@
   /* المتغيرات العامة للثيم الداكن بالكامل */
   --bg: var(--space-black);
   --bg-elev: rgba(5, 11, 20, 0.95);
-  --bg-soft: rgba(10, 19, 36, 0.75);
+  --bg-soft: rgba(5, 11, 20, 0.95);
   --text: var(--mist);
   --muted: #8b9bb4;
   --line: rgba(56, 189, 248, 0.15);
@@ -36,8 +36,8 @@
   --error: #f87171;
   --ok: #4ade80;
   --input: rgba(2, 4, 8, 0.9);
-  --wash-a: rgba(5, 11, 20, 0.8);
-  --wash-b: rgba(10, 19, 36, 0.6);
+  --wash-a: rgba(2, 4, 8, 0.95);
+  --wash-b: rgba(5, 11, 20, 0.9);
   --shadow-sm: 0 8px 18px rgba(0, 0, 0, 0.8);
   --shadow-md: 0 16px 36px rgba(0, 0, 0, 0.85);
   --shadow-lg: 0 32px 70px rgba(0, 0, 0, 0.95);
