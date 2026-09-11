@@ -1,11 +1,11 @@
 :root {
   /* درجات الفضاء الليلي الداكن */
-  --space-black: #020408;       /* أسود فضائي داكن جداً */
-  --space-navy: #050b14;        /* أزرق ليلي عميق جداً */
-  --navy-800: #0a1324;          /* كحلي مظلم */
-  --navy-600: #12213a;          /* كحلي متوسط */
-  --mist: #e2e8f0;              /* فضي ناعم للنصوص */
-  --white: #ffffff;
+  --space-black: #020408 !important;
+  --space-navy: #050b14 !important;
+  --navy-800: #0a1324 !important;
+  --navy-600: #12213a !important;
+  --mist: #e2e8f0 !important;
+  --white: #ffffff !important;
   --font: "Outfit", system-ui, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, monospace;
   --radius: 22px;
@@ -14,30 +14,30 @@
   --max: 1160px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 
-  /* المتغيرات العامة للثيم الداكن بالكامل */
-  --bg: var(--space-black);
-  --bg-elev: rgba(5, 11, 20, 0.95);
-  --bg-soft: rgba(5, 11, 20, 0.95);
-  --text: var(--mist);
-  --muted: #8b9bb4;
-  --line: rgba(56, 189, 248, 0.15);
-  --accent: #38bdf8;            /* أزرق سماوي مضيء */
-  --accent-strong: #7dd3fc;     /* سماوي متوهج */
-  --card: rgba(5, 11, 20, 0.85);
-  --card-hover: rgba(10, 19, 36, 0.95);
-  --btn-bg: linear-gradient(135deg, #0f1c33, #050b14);
-  --btn-text: var(--white);
-  --ghost-bg: rgba(255, 255, 255, 0.03);
-  --header-bg: rgba(2, 4, 8, 0.75);
-  --header-scrolled: rgba(2, 4, 8, 0.95);
-  --glow-a: rgba(56, 189, 248, 0.18);
-  --glow-b: rgba(10, 19, 36, 0.5);
-  --focus: #7dd3fc;
-  --error: #f87171;
-  --ok: #4ade80;
-  --input: rgba(2, 4, 8, 0.9);
-  --wash-a: rgba(2, 4, 8, 0.95);
-  --wash-b: rgba(5, 11, 20, 0.9);
+  /* إجبار المتغيرات العامة على الثيم الداكن */
+  --bg: #020408 !important;
+  --bg-elev: rgba(5, 11, 20, 0.95) !important;
+  --bg-soft: rgba(5, 11, 20, 0.95) !important;
+  --text: #e2e8f0 !important;
+  --muted: #8b9bb4 !important;
+  --line: rgba(56, 189, 248, 0.15) !important;
+  --accent: #38bdf8 !important;
+  --accent-strong: #7dd3fc !important;
+  --card: rgba(5, 11, 20, 0.85) !important;
+  --card-hover: rgba(10, 19, 36, 0.95) !important;
+  --btn-bg: linear-gradient(135deg, #0f1c33, #050b14) !important;
+  --btn-text: #ffffff !important;
+  --ghost-bg: rgba(255, 255, 255, 0.03) !important;
+  --header-bg: rgba(2, 4, 8, 0.75) !important;
+  --header-scrolled: rgba(2, 4, 8, 0.95) !important;
+  --glow-a: rgba(56, 189, 248, 0.18) !important;
+  --glow-b: rgba(10, 19, 36, 0.5) !important;
+  --focus: #7dd3fc !important;
+  --error: #f87171 !important;
+  --ok: #4ade80 !important;
+  --input: rgba(2, 4, 8, 0.9) !important;
+  --wash-a: rgba(2, 4, 8, 0.95) !important;
+  --wash-b: rgba(5, 11, 20, 0.9) !important;
   --shadow-sm: 0 8px 18px rgba(0, 0, 0, 0.8);
   --shadow-md: 0 16px 36px rgba(0, 0, 0, 0.85);
   --shadow-lg: 0 32px 70px rgba(0, 0, 0, 0.95);
@@ -53,24 +53,21 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + 12px);
-  background-color: var(--space-black);
-}
-
-body.menu-open {
-  overflow: hidden;
+  background-color: #020408 !important;
 }
 
 body {
   margin: 0;
   font-family: var(--font);
-  color: var(--text);
-  background:
-    radial-gradient(1200px 700px at 20% -10%, var(--wash-a), transparent 60%),
-    radial-gradient(900px 600px at 80% 100%, var(--wash-b), transparent 50%),
-    var(--bg);
+  color: var(--text) !important;
+  background: #020408 !important; /* إغلاق أي لون أبيض خلفي فوراً */
   line-height: 1.65;
   overflow-x: hidden;
   min-height: 100vh;
+}
+
+body.menu-open {
+  overflow: hidden;
 }
 
 img {
@@ -125,6 +122,7 @@ ul {
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
+  background: #020408 !important;
 }
 
 .bg-grid {
@@ -983,7 +981,7 @@ ul {
   padding: 28px 0 40px;
   color: var(--muted);
   border-top: 1px solid var(--line);
-  background: var(--space-black);
+  background: #020408 !important;
 }
 
 .to-top {
