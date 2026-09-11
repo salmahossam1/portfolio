@@ -397,7 +397,6 @@ ul {
 }
 
 .glass-card,
-.portrait-frame,
 .about-frame,
 .contact-form {
   background: var(--card);
@@ -527,7 +526,7 @@ ul {
   place-items: center;
 }
 
-/* تخصيص دوائر الدوران بحواف زرقاء شفافة ومنع إظهار الأبيض */
+/* دوائر الدوران الفضائية */
 .orbit {
   position: absolute;
   border: 1px dashed rgba(56, 189, 248, 0.3) !important;
@@ -550,16 +549,18 @@ ul {
   border-bottom-color: var(--accent-strong) !important;
 }
 
-.portrait-frame,
-.about-frame,
-.project-media {
-  position: relative;
-  overflow: hidden;
-}
-
+/* ========================================================== */
+/* إطار الصورة الشخصية: تحويل الصورة لتكون داخل الدائرة تماماً */
+/* ========================================================== */
 .portrait-frame {
-  width: min(340px, 82%);
-  aspect-ratio: 4 / 5;
+  width: min(320px, 78%);
+  aspect-ratio: 1 / 1; /* جعل الإطار مربعي الشكل لتشكيل دائرة متناسقة */
+  border-radius: 50% !important; /* تحويل الإطار إلى دائرة دقيقة */
+  background: transparent !important; /* إلغاء خلفية المستطيل */
+  border: none !important; /* إلغاء الحدود المستطيلة */
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.25) !important; /* توهج دائري حول الصورة */
+  position: relative;
+  overflow: hidden; /* قص الصورة داخل شكل الدائرة */
   z-index: 1;
   animation: floatY 6s ease-in-out infinite;
 }
@@ -571,14 +572,13 @@ ul {
   z-index: 0;
 }
 
-.portrait-frame img,
-.about-frame img,
-.project-media img {
+.portrait-frame img {
   position: relative;
   z-index: 2;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50% !important; /* قص الصورة دائرياً */
 }
 
 .portrait-frame img[src=""],
@@ -595,6 +595,7 @@ ul {
   place-items: center;
   background: linear-gradient(160deg, rgba(10, 19, 36, 0.95), rgba(2, 4, 8, 0.98));
   color: var(--text);
+  border-radius: 50%;
 }
 
 .portrait-fallback span {
@@ -608,6 +609,12 @@ ul {
   position: absolute;
   bottom: 18px;
   color: var(--muted);
+}
+
+.about-frame,
+.project-media {
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-chips {
