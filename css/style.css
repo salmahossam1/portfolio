@@ -1,11 +1,11 @@
 :root {
-  /* درجات السماء الليلية للثيم الداكن */
-  --navy-950: #04070d;          /* أزرق ليلي شديد السواد */
-  --navy-900: #080e1a;          /* عمق السماء الليلي */
-  --navy-800: #0f1b33;          /* كحلي داكن جداً */
-  --navy-600: #1a2e52;          /* أزرق ليلي متوسط */
-  --mist: #e2e8f0;              /* ضوء القمر / فضي ناعم */
-  --white: #f8fafc;
+  /* درجات الفضاء الليلي الداكن */
+  --space-black: #020408;       /* أسود فضائي داكن جداً */
+  --space-navy: #050b14;        /* أزرق ليلي عميق جداً */
+  --navy-800: #0a1324;          /* كحلي مظلم */
+  --navy-600: #12213a;          /* كحلي متوسط */
+  --mist: #e2e8f0;              /* فضي ناعم للنصوص */
+  --white: #ffffff;
   --font: "Outfit", system-ui, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, monospace;
   --radius: 22px;
@@ -14,34 +14,34 @@
   --max: 1160px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 
-  /* متغيرات الثيم الداكن افتراضياً */
-  --bg: var(--navy-950);
-  --bg-elev: rgba(8, 14, 26, 0.85);
-  --bg-soft: rgba(15, 27, 51, 0.65);
+  /* المتغيرات العامة للثيم الداكن بالكامل */
+  --bg: var(--space-black);
+  --bg-elev: rgba(5, 11, 20, 0.95);
+  --bg-soft: rgba(10, 19, 36, 0.75);
   --text: var(--mist);
-  --muted: #94a3b8;
-  --line: rgba(226, 232, 240, 0.12);
+  --muted: #8b9bb4;
+  --line: rgba(56, 189, 248, 0.15);
   --accent: #38bdf8;            /* أزرق سماوي مضيء */
-  --accent-strong: #7dd3fc;     /* سماوي فاتح متوهج */
-  --card: rgba(8, 14, 26, 0.75);
-  --card-hover: rgba(15, 27, 51, 0.9);
-  --btn-bg: linear-gradient(135deg, #1a2e52, #080e1a);
+  --accent-strong: #7dd3fc;     /* سماوي متوهج */
+  --card: rgba(5, 11, 20, 0.85);
+  --card-hover: rgba(10, 19, 36, 0.95);
+  --btn-bg: linear-gradient(135deg, #0f1c33, #050b14);
   --btn-text: var(--white);
-  --ghost-bg: rgba(226, 232, 240, 0.05);
-  --header-bg: rgba(4, 7, 13, 0.65);
-  --header-scrolled: rgba(4, 7, 13, 0.92);
-  --glow-a: rgba(56, 189, 248, 0.22);
-  --glow-b: rgba(26, 46, 82, 0.45);
+  --ghost-bg: rgba(255, 255, 255, 0.03);
+  --header-bg: rgba(2, 4, 8, 0.75);
+  --header-scrolled: rgba(2, 4, 8, 0.95);
+  --glow-a: rgba(56, 189, 248, 0.18);
+  --glow-b: rgba(10, 19, 36, 0.5);
   --focus: #7dd3fc;
   --error: #f87171;
   --ok: #4ade80;
-  --input: rgba(4, 7, 13, 0.8);
-  --wash-a: rgba(15, 27, 51, 0.7);
-  --wash-b: rgba(26, 46, 82, 0.4);
-  --shadow-sm: 0 8px 18px rgba(2, 4, 10, 0.6);
-  --shadow-md: 0 16px 36px rgba(2, 4, 10, 0.75);
-  --shadow-lg: 0 32px 70px rgba(2, 4, 10, 0.9);
-  --shadow-glow: 0 0 0 1px rgba(56, 189, 248, 0.25), 0 20px 50px rgba(2, 4, 10, 0.8);
+  --input: rgba(2, 4, 8, 0.9);
+  --wash-a: rgba(5, 11, 20, 0.8);
+  --wash-b: rgba(10, 19, 36, 0.6);
+  --shadow-sm: 0 8px 18px rgba(0, 0, 0, 0.8);
+  --shadow-md: 0 16px 36px rgba(0, 0, 0, 0.85);
+  --shadow-lg: 0 32px 70px rgba(0, 0, 0, 0.95);
+  --shadow-glow: 0 0 0 1px rgba(56, 189, 248, 0.2), 0 20px 50px rgba(0, 0, 0, 0.9);
 }
 
 *,
@@ -53,6 +53,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + 12px);
+  background-color: var(--space-black);
 }
 
 body.menu-open {
@@ -117,7 +118,7 @@ ul {
   top: 12px;
 }
 
-/* خلفية النجوم (بدون أي مستطيلات أو شبكة) */
+/* خلفية النجوم البيضاء المتلألئة */
 .bg-scene {
   position: fixed;
   inset: 0;
@@ -126,17 +127,16 @@ ul {
   overflow: hidden;
 }
 
-/* النجوم المتلألئة */
 .bg-grid {
   position: absolute;
   inset: 0;
   background: transparent;
   box-shadow: 
-    12vw 15vh 2px 1px #fff, 28vw 45vh 1px 1px rgba(255, 255, 255, 0.8), 45vw 12vh 2px 0px #7dd3fc,
-    65vw 35vh 1px 1px #fff, 82vw 18vh 2px 1px rgba(255, 255, 255, 0.9), 92vw 62vh 1px 0px #38bdf8,
-    18vw 78vh 2px 1px #fff, 34vw 88vh 1px 1px rgba(255, 255, 255, 0.7), 58vw 68vh 2px 1px #7dd3fc,
-    74vw 82vh 1px 1px #fff, 88vw 92vh 2px 0px rgba(255, 255, 255, 0.8), 08vw 52vh 1px 1px #38bdf8,
-    38vw 28vh 2px 1px #fff, 52vw 42vh 1px 0px rgba(255, 255, 255, 0.6), 78vw 08vh 2px 1px #7dd3fc;
+    12vw 15vh 2px 1px #ffffff, 28vw 45vh 1px 1px rgba(255, 255, 255, 0.85), 45vw 12vh 2px 0px #7dd3fc,
+    65vw 35vh 1px 1px #ffffff, 82vw 18vh 2px 1px rgba(255, 255, 255, 0.95), 92vw 62vh 1px 0px #38bdf8,
+    18vw 78vh 2px 1px #ffffff, 34vw 88vh 1px 1px rgba(255, 255, 255, 0.75), 58vw 68vh 2px 1px #7dd3fc,
+    74vw 82vh 1px 1px #ffffff, 88vw 92vh 2px 0px rgba(255, 255, 255, 0.85), 08vw 52vh 1px 1px #38bdf8,
+    38vw 28vh 2px 1px #ffffff, 52vw 42vh 1px 0px rgba(255, 255, 255, 0.65), 78vw 08vh 2px 1px #7dd3fc;
   border-radius: 50%;
   animation: starTwinkle 4s ease-in-out infinite alternate;
 }
@@ -146,9 +146,9 @@ ul {
   position: absolute;
   inset: 0;
   box-shadow: 
-    05vw 25vh 1px 1px rgba(255, 255, 255, 0.8), 22vw 65vh 2px 0px #38bdf8, 39vw 05vh 1px 1px #fff,
-    51vw 85vh 2px 1px rgba(255, 255, 255, 0.9), 68vw 22vh 1px 0px #7dd3fc, 85vw 48vh 2px 1px #fff,
-    15vw 95vh 1px 1px #fff, 30vw 38vh 2px 1px rgba(255, 255, 255, 0.7), 61vw 18vh 1px 1px #38bdf8;
+    05vw 25vh 1px 1px rgba(255, 255, 255, 0.85), 22vw 65vh 2px 0px #38bdf8, 39vw 05vh 1px 1px #ffffff,
+    51vw 85vh 2px 1px rgba(255, 255, 255, 0.95), 68vw 22vh 1px 0px #7dd3fc, 85vw 48vh 2px 1px #ffffff,
+    15vw 95vh 1px 1px #ffffff, 30vw 38vh 2px 1px rgba(255, 255, 255, 0.75), 61vw 18vh 1px 1px #38bdf8;
   border-radius: 50%;
   animation: starTwinkle 6s ease-in-out infinite alternate-reverse;
 }
@@ -159,7 +159,7 @@ ul {
   height: 45vw;
   border-radius: 50%;
   filter: blur(100px);
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .bg-glow-a {
@@ -202,6 +202,7 @@ ul {
   font-size: clamp(2rem, 4vw, 3.1rem);
   letter-spacing: -0.04em;
   line-height: 1.1;
+  color: var(--white);
 }
 
 .section-intro,
@@ -258,6 +259,7 @@ ul {
   gap: 10px;
   font-weight: 700;
   letter-spacing: -0.03em;
+  color: var(--white);
 }
 
 .brand-mark {
@@ -297,7 +299,7 @@ ul {
 
 .nav-link:hover,
 .nav-link.is-active {
-  color: var(--text);
+  color: var(--white);
   text-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
 }
 
@@ -351,7 +353,6 @@ ul {
   transform: translateY(-6.8px) rotate(-45deg);
 }
 
-/* إضاءة وتوهج أزياء وزر الثيم عند الماوس */
 .theme-toggle {
   width: 44px;
   height: 44px;
@@ -432,6 +433,7 @@ ul {
   line-height: 0.95;
   letter-spacing: -0.06em;
   margin-bottom: 18px;
+  color: var(--white);
 }
 
 .typed-line {
@@ -498,6 +500,7 @@ ul {
 .btn-ghost {
   background: var(--ghost-bg);
   border-color: var(--line);
+  color: var(--white);
 }
 
 .btn-ghost:hover {
@@ -573,14 +576,13 @@ ul {
   opacity: 0;
 }
 
-/* تم إلغاء خلفية الخطوط العرضية المزعجة */
 .portrait-fallback {
   position: absolute;
   inset: 0;
   z-index: 1;
   display: grid;
   place-items: center;
-  background: linear-gradient(160deg, rgba(26, 46, 82, 0.8), rgba(4, 7, 13, 0.9));
+  background: linear-gradient(160deg, rgba(10, 19, 36, 0.95), rgba(2, 4, 8, 0.98));
   color: var(--text);
 }
 
@@ -588,6 +590,7 @@ ul {
   font-size: 3rem;
   font-weight: 700;
   letter-spacing: -0.06em;
+  color: var(--white);
 }
 
 .portrait-fallback small {
@@ -613,6 +616,7 @@ ul {
   font-size: 0.78rem;
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(8px);
+  color: var(--mist);
 }
 
 .chip:nth-child(1) { transform: translate(-12px, 70px); }
@@ -709,6 +713,7 @@ ul {
 .contact-card h3 {
   letter-spacing: -0.03em;
   margin-bottom: 8px;
+  color: var(--white);
 }
 
 .tag-list,
@@ -727,6 +732,7 @@ ul {
   border: 1px solid var(--line);
   background: var(--ghost-bg);
   font-size: 0.82rem;
+  color: var(--mist);
 }
 
 .skills-grid {
@@ -737,7 +743,6 @@ ul {
   grid-column: span 2;
 }
 
-/* إضاءة وتوهج أيقونات المهارات عند الوقوف عليها */
 .skill-icon {
   width: 46px;
   height: 46px;
@@ -745,7 +750,7 @@ ul {
   place-items: center;
   border-radius: 12px;
   margin-bottom: 12px;
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(8, 14, 26, 0.5));
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(5, 11, 20, 0.8));
   border: 1px solid var(--line);
   color: var(--accent);
   transition: transform 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s, color 0.3s, background 0.3s;
@@ -762,7 +767,7 @@ ul {
   transform: translateY(-3px) scale(1.08);
   border-color: var(--accent-strong);
   color: #ffffff;
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.4), rgba(26, 46, 82, 0.8));
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.4), rgba(10, 19, 36, 0.9));
   box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
 }
 
@@ -819,6 +824,7 @@ ul {
   font-size: 1.12rem;
   font-style: italic;
   margin-bottom: 18px;
+  color: var(--mist);
 }
 
 .testimonial-meta {
@@ -831,7 +837,7 @@ ul {
 
 .testimonial-meta strong {
   display: block;
-  color: var(--text);
+  color: var(--white);
 }
 
 .avatar-dot {
@@ -890,6 +896,7 @@ ul {
 .field label {
   font-size: 0.88rem;
   font-weight: 600;
+  color: var(--white);
 }
 
 .field input,
@@ -900,6 +907,7 @@ ul {
   border-radius: 14px;
   padding: 12px 14px;
   outline: none;
+  color: var(--white);
   transition: border-color 0.25s, box-shadow 0.25s;
 }
 
@@ -932,7 +940,6 @@ ul {
   color: var(--error);
 }
 
-/* إضاءة وتوهج أيقونات التواصل الاجتماعي عند الماوس */
 .social-list {
   display: grid;
   gap: 10px;
@@ -947,6 +954,7 @@ ul {
   border-radius: 14px;
   border: 1px solid var(--line);
   background: var(--ghost-bg);
+  color: var(--mist);
   transition: transform 0.25s var(--ease), border-color 0.25s, box-shadow 0.25s, color 0.25s, background 0.25s;
 }
 
@@ -975,9 +983,9 @@ ul {
   padding: 28px 0 40px;
   color: var(--muted);
   border-top: 1px solid var(--line);
+  background: var(--space-black);
 }
 
-/* زر الصعود المتوهج عند الماوس */
 .to-top {
   position: fixed;
   right: 18px;
@@ -1037,7 +1045,6 @@ ul {
   animation: slideIn 0.8s var(--ease) forwards;
 }
 
-/* الأنيماشن للنجوم والتأثيرات */
 @keyframes starTwinkle {
   0% { opacity: 0.3; transform: scale(0.98); }
   50% { opacity: 1; transform: scale(1.02); }
