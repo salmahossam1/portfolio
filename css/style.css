@@ -14,7 +14,7 @@
   --max: 1160px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 
-  /* إجبار المتغيرات العامة على الثيم الداكن */
+  /* إجبار جميع خلفيات الثيم على اللون الداكن */
   --bg: #020408 !important;
   --bg-elev: rgba(5, 11, 20, 0.95) !important;
   --bg-soft: rgba(5, 11, 20, 0.95) !important;
@@ -36,8 +36,8 @@
   --error: #f87171 !important;
   --ok: #4ade80 !important;
   --input: rgba(2, 4, 8, 0.9) !important;
-  --wash-a: rgba(2, 4, 8, 0.95) !important;
-  --wash-b: rgba(5, 11, 20, 0.9) !important;
+  --wash-a: #020408 !important;
+  --wash-b: #050b14 !important;
   --shadow-sm: 0 8px 18px rgba(0, 0, 0, 0.8);
   --shadow-md: 0 16px 36px rgba(0, 0, 0, 0.85);
   --shadow-lg: 0 32px 70px rgba(0, 0, 0, 0.95);
@@ -50,17 +50,27 @@
   box-sizing: border-box;
 }
 
+/* إجبار كافة عناصر الصفحة الأساسية والقطاعات على عدم إظهار أي لون أبيض خلف الدوائر */
+html, 
+body, 
+main, 
+#app, 
+.site-header, 
+.hero, 
+.section, 
+.bg-scene {
+  background-color: #020408 !important;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + 12px);
-  background-color: #020408 !important;
 }
 
 body {
   margin: 0;
   font-family: var(--font);
   color: var(--text) !important;
-  background: #020408 !important; /* إغلاق أي لون أبيض خلفي فوراً */
   line-height: 1.65;
   overflow-x: hidden;
   min-height: 100vh;
@@ -115,14 +125,13 @@ ul {
   top: 12px;
 }
 
-/* خلفية النجوم البيضاء المتلألئة */
+/* خلفية النجوم والتوهج */
 .bg-scene {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  background: #020408 !important;
 }
 
 .bg-grid {
@@ -130,11 +139,11 @@ ul {
   inset: 0;
   background: transparent;
   box-shadow: 
-    12vw 15vh 2px 1px #ffffff, 28vw 45vh 1px 1px rgba(255, 255, 255, 0.85), 45vw 12vh 2px 0px #7dd3fc,
-    65vw 35vh 1px 1px #ffffff, 82vw 18vh 2px 1px rgba(255, 255, 255, 0.95), 92vw 62vh 1px 0px #38bdf8,
-    18vw 78vh 2px 1px #ffffff, 34vw 88vh 1px 1px rgba(255, 255, 255, 0.75), 58vw 68vh 2px 1px #7dd3fc,
-    74vw 82vh 1px 1px #ffffff, 88vw 92vh 2px 0px rgba(255, 255, 255, 0.85), 08vw 52vh 1px 1px #38bdf8,
-    38vw 28vh 2px 1px #ffffff, 52vw 42vh 1px 0px rgba(255, 255, 255, 0.65), 78vw 08vh 2px 1px #7dd3fc;
+    12vw 15vh 2px 1px rgba(56, 189, 248, 0.8), 28vw 45vh 1px 1px rgba(125, 211, 252, 0.85), 45vw 12vh 2px 0px #7dd3fc,
+    65vw 35vh 1px 1px rgba(56, 189, 248, 0.9), 82vw 18vh 2px 1px rgba(125, 211, 252, 0.95), 92vw 62vh 1px 0px #38bdf8,
+    18vw 78vh 2px 1px rgba(56, 189, 248, 0.8), 34vw 88vh 1px 1px rgba(125, 211, 252, 0.75), 58vw 68vh 2px 1px #7dd3fc,
+    74vw 82vh 1px 1px rgba(56, 189, 248, 0.9), 88vw 92vh 2px 0px rgba(125, 211, 252, 0.85), 08vw 52vh 1px 1px #38bdf8,
+    38vw 28vh 2px 1px rgba(56, 189, 248, 0.8), 52vw 42vh 1px 0px rgba(125, 211, 252, 0.65), 78vw 08vh 2px 1px #7dd3fc;
   border-radius: 50%;
   animation: starTwinkle 4s ease-in-out infinite alternate;
 }
@@ -144,9 +153,9 @@ ul {
   position: absolute;
   inset: 0;
   box-shadow: 
-    05vw 25vh 1px 1px rgba(255, 255, 255, 0.85), 22vw 65vh 2px 0px #38bdf8, 39vw 05vh 1px 1px #ffffff,
-    51vw 85vh 2px 1px rgba(255, 255, 255, 0.95), 68vw 22vh 1px 0px #7dd3fc, 85vw 48vh 2px 1px #ffffff,
-    15vw 95vh 1px 1px #ffffff, 30vw 38vh 2px 1px rgba(255, 255, 255, 0.75), 61vw 18vh 1px 1px #38bdf8;
+    05vw 25vh 1px 1px rgba(56, 189, 248, 0.85), 22vw 65vh 2px 0px #38bdf8, 39vw 05vh 1px 1px rgba(125, 211, 252, 0.8),
+    51vw 85vh 2px 1px rgba(125, 211, 252, 0.95), 68vw 22vh 1px 0px #7dd3fc, 85vw 48vh 2px 1px rgba(56, 189, 248, 0.8),
+    15vw 95vh 1px 1px rgba(56, 189, 248, 0.8), 30vw 38vh 2px 1px rgba(125, 211, 252, 0.75), 61vw 18vh 1px 1px #38bdf8;
   border-radius: 50%;
   animation: starTwinkle 6s ease-in-out infinite alternate-reverse;
 }
@@ -158,16 +167,15 @@ ul {
   border-radius: 50%;
   filter: blur(100px);
   opacity: 0.5;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.15), transparent 70%) !important;
 }
 
 .bg-glow-a {
-  background: var(--glow-a);
   top: -10%;
   right: -10%;
 }
 
 .bg-glow-b {
-  background: var(--glow-b);
   bottom: 5%;
   left: -10%;
 }
@@ -178,6 +186,7 @@ ul {
   width: 100%;
   height: 100%;
   z-index: 0;
+  background: transparent !important;
 }
 
 .container {
@@ -230,7 +239,6 @@ ul {
   height: var(--header-h);
   display: flex;
   align-items: center;
-  background: var(--header-bg);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid transparent;
@@ -519,22 +527,27 @@ ul {
   place-items: center;
 }
 
+/* تخصيص دوائر الدوران بحواف زرقاء شفافة ومنع إظهار الأبيض */
 .orbit {
   position: absolute;
-  border: 1px dashed rgba(56, 189, 248, 0.28);
+  border: 1px dashed rgba(56, 189, 248, 0.3) !important;
   border-radius: 50%;
+  background: transparent !important;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.15) !important;
 }
 
 .orbit-a {
   width: 420px;
   height: 420px;
   animation: spin 28s linear infinite;
+  border-top-color: var(--accent) !important;
 }
 
 .orbit-b {
   width: 340px;
   height: 340px;
   animation: spin 18s linear infinite reverse;
+  border-bottom-color: var(--accent-strong) !important;
 }
 
 .portrait-frame,
@@ -554,7 +567,7 @@ ul {
 .portrait-glow {
   position: absolute;
   inset: -20%;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.35), transparent 60%);
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.35), transparent 60%) !important;
   z-index: 0;
 }
 
@@ -1043,6 +1056,7 @@ ul {
   animation: slideIn 0.8s var(--ease) forwards;
 }
 
+/* Keyframes */
 @keyframes starTwinkle {
   0% { opacity: 0.3; transform: scale(0.98); }
   50% { opacity: 1; transform: scale(1.02); }
@@ -1058,6 +1072,7 @@ ul {
 }
 
 @keyframes spin {
+  from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
